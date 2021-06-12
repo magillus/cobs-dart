@@ -12,7 +12,7 @@ void main() {
 
   group('Encode and decode byte data using COBS', () {
     test('encodeCOBS returns error with null source data', () {
-      ByteData source;
+      ByteData? source;
       var encoded = ByteData(1);
       EncodeResult encodeResult = encodeCOBS(encoded, source);
       expect(encodeResult.status, EncodeStatus.NULL_POINTER);
@@ -20,7 +20,7 @@ void main() {
     });
 
     test('decodeCOBS returns error with null source data', () {
-      ByteData source;
+      ByteData? source;
       var decoded = ByteData(1);
       DecodeResult decodeResult = decodeCOBS(decoded, source);
       expect(decodeResult.status, DecodeStatus.NULL_POINTER);
